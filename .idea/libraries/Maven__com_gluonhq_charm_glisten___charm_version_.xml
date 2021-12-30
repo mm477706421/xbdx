@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gluonhq:charm-glisten:${charm.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gluonhq/charm-glisten/${charm.version}/charm-glisten-${charm.version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gluonhq/charm-glisten/${charm.version}/charm-glisten-${charm.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gluonhq/charm-glisten/${charm.version}/charm-glisten-${charm.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

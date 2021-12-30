@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gluonhq.attach:display:${attach.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gluonhq/attach/display/${attach.version}/display-${attach.version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gluonhq/attach/display/${attach.version}/display-${attach.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gluonhq/attach/display/${attach.version}/display-${attach.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
