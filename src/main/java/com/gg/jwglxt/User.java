@@ -28,14 +28,25 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class User {
-    public boolean isProxy = true;
-    public Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8080));
+    public User() {
+        this.isProxy = false;
+    }
 
-    public Map<String, String> headers = new HashMap<>();
-    public long timestamp;
-    public String stuName = "";
-    public String username;
-    public String password;
+    public User(boolean isProxy) {
+        this.isProxy = isProxy;
+    }
+
+    private final boolean isProxy;
+    private final Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8080));
+
+    public String getStuName() {
+        return stuName;
+    }
+
+    private final Map<String, String> headers = new HashMap<>();
+    private long timestamp;
+    private String stuName = "";
+    private String username;
 
     public void refreshAccount(String yhm) throws IOException {
         String url = "http://jwgl.nwu.edu.cn/jwglxt/xtgl/login_cxUpdateDlsbcs.html";
@@ -104,7 +115,6 @@ public class User {
 
     public boolean Login(String username, String password) throws IOException, ScriptException {
         this.username = username;
-        this.password = password;
         try {
             refreshAccount(username);
         } catch (Exception e) {
@@ -155,13 +165,13 @@ public class User {
 //        System.out.println(responseLogin.cookies().get("JSESSIONID"));
         System.out.println(headers.get("Cookie"));
         headers.replace("Cookie", "JSESSIONID=" + responseLogin.cookies().get("JSESSIONID") + ";" + headers.get("Cookie").split(";")[1]);
-        Element element = Jsoup.connect("http://jwgl.nwu.edu.cn/jwglxt/xsxxxggl/xsgrxxwh_cxXsgrxx.html?gnmkdm=N100801&layout=default&su="+username).headers(headers).execute().parse().getElementsByClass("form-control-static").get(1);
+        Element element = Jsoup.connect("http://jwgl.nwu.edu.cn/jwglxt/xsxxxggl/xsgrxxwh_cxXsgrxx.html?gnmkdm=N100801&layout=default&su=" + username).headers(headers).execute().parse().getElementsByClass("form-control-static").get(1);
         this.stuName = element.text();
         System.out.println(stuName);
         return responseLogin.statusCode() == 200;
     }
 
-    public void getCourses() throws IOException {
+    public String getCourses() throws IOException {
         String url = "http://jwgl.nwu.edu.cn/jwglxt/xsxk/zzxkyzb_cxZzxkYzbPartDisplay.html?gnmkdm=N253512&su=" + username;
         System.out.println(url);
         Map<String, String> coursesheaders = new HashMap<>();
@@ -218,13 +228,14 @@ public class User {
         } else {
             response = con.followRedirects(true).ignoreContentType(true).execute();
         }
-        System.out.println(response.body());
+        return response.body();
 //        System.out.println(url);
     }
 
     public static void main(String[] args) throws IOException, ScriptException {
         User user1 = new User();
         user1.Login("2020111111", "Ffk20020215");
+
         user1.getCourses();
     }
 }

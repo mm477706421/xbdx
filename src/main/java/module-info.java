@@ -5,6 +5,7 @@ module com.gg.jwglxt {
     requires org.apache.commons.codec;
     requires java.scripting;
     requires fastjson;
+    requires org.apache.commons.io;
 
 
     opens com.gg.jwglxt to javafx.fxml;

@@ -57,7 +57,7 @@ public class HelloController {
         try {
             if(user.Login(username,password)){
                 isLogin = true;
-                Alert alert = new Alert(Alert.AlertType.INFORMATION,"登陆成功,欢迎\n登陆人："+user.stuName);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION,"登陆成功,欢迎\n登陆人："+user.getStuName());
                 alert.show();
             }
         }

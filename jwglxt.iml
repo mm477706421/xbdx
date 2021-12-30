@@ -15,12 +15,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.79" level="project" />
-    <orderEntry type="library" name="Maven: com.gluonhq:charm-glisten:${charm.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.gluonhq.attach:display:${attach.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.gluonhq.attach:lifecycle:${attach.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.gluonhq.attach:statusbar:${attach.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.gluonhq.attach:storage:${attach.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.gluonhq.attach:util:${attach.version}" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:17.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:17.0.1" level="project" />
@@ -35,5 +29,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.11.0" level="project" />
   </component>
 </module>
